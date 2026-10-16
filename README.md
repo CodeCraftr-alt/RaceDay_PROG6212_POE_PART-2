@@ -182,6 +182,7 @@ The original Part 1 files in `docs/part1` are planning references. The app does 
 
 ## Submission
 
+
 CI screenshot: **They are part of the video presentation**.
 
 Unlisted YouTube video: **https://youtu.be/LgIe0GqDoaY**.
