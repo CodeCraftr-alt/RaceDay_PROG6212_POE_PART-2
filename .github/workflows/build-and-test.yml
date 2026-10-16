@@ -1,0 +1,31 @@
+name: Build and test RaceDay
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore packages
+        run: dotnet restore RaceDay.sln
+
+      - name: Build the solution
+        run: dotnet build RaceDay.sln --configuration Release --no-restore
+
+      - name: Run the tests
+        run: dotnet test RaceDay.sln --configuration Release --no-build
+
