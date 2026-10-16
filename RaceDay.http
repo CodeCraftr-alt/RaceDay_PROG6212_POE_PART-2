@@ -1,0 +1,32 @@
+@RaceDay_HostAddress = http://localhost:5024
+
+### List public events
+GET {{RaceDay_HostAddress}}/api/events
+
+### Register an Organiser
+POST {{RaceDay_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Thabo",
+  "lastName": "Mokoena",
+  "email": "organiser@example.com",
+  "password": "RaceDay123!",
+  "role": "Organiser"
+}
+
+### Log in
+POST {{RaceDay_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "organiser@example.com",
+  "password": "RaceDay123!"
+}
+
+### Your HTTP client must retain the cookie. Swagger does this automatically.
+GET {{RaceDay_HostAddress}}/api/profile
+
+### Log out
+POST {{RaceDay_HostAddress}}/api/auth/logout
+
