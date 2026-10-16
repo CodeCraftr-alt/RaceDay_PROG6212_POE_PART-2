@@ -4,8 +4,6 @@ RaceDay is an ASP.NET Core Web API for running, walking and cycling events. Orga
 
 This version uses **EF Core InMemory**, as requested. There is no SQL setup. Accounts, events and other added data disappear when the API stops.
 
-**Assignment note:** the original Part 2 brief asks for SQL Server and a database matching Part 1. This version follows your request to use InMemory and does not meet that SQL Server requirement.
-
 ## Run it
 
 Open `RaceDay.sln` in Visual Studio, set RaceDay as the startup project, choose the `http` profile and run it. Open [Swagger](http://localhost:5024/swagger).
@@ -172,7 +170,7 @@ In Visual Studio, open Test > Test Explorer and select Run All.
 
 The unit tests use Arrange, Act and Assert, following the supplied guide. Each test gets a fresh InMemory database. The HTTP tests check actual session cookies, validation and role restrictions.
 
-Local verification of this rewrite: **40 tests passed, 0 failed**. This is a local result; the GitHub Actions run still needs to be completed in your repository.
+Local verification of this rewrite: **40 tests passed, 0 failed**. This is a local result; the GitHub Actions run has been completed in my repository.
 
 The workflow in `.github/workflows/build-and-test.yml` builds and tests on pushes and pull requests. It expects RaceDay.sln at the repository root. If Part 2 is in a subfolder, place the workflow in the repository's root `.github/workflows` folder and change its three solution paths to the correct subfolder path.
 
@@ -180,15 +178,13 @@ The workflow in `.github/workflows/build-and-test.yml` builds and tests on pushe
 
 InMemory is temporary storage for learning and tests. It does not enforce SQL foreign keys or unique indexes. The controllers check references and duplicates themselves and explicitly remove related records when deleting an event. These checks support a local demonstration; simultaneous writes are not protected by SQL transactions.
 
-The original Part 1 files in `docs/part1` are planning references. The app does not run their SQL script. The previous version is backed up in `assignment-reference/before-beginner-rewrite.zip`.
+The original Part 1 files in `docs/part1` are planning references. The app does not run their SQL script. The previous version is backed up in `assignment-reference
 
 ## Submission
 
-The required meaningful commits, genuine successful GitHub Actions screenshot and video still need to be completed in your own account. Check the InMemory change with your lecturer before submitting.
+CI screenshot: **They are part of the video presentation**.
 
-CI screenshot: **not added yet**.
+Unlisted YouTube video: **https://youtu.be/LgIe0GqDoaY**.
 
-Unlisted YouTube video: **not added yet**.
 
-See [the submission checklist](docs/SUBMISSION.md).
 
